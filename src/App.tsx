@@ -5,43 +5,52 @@ import './styles/theme.css'
 import './styles/global.css'
 import { Menu } from './components/Menu'
 import { CountDown } from './components/CountDown'
+import { DefaultInput } from './components/DefaultInput'
+import { Cycles } from './components/Cycles'
+import { DefaultButton } from './components/DefaultButton'
+import { PlayCircleIcon } from 'lucide-react'
+import { Footer } from './components/Footer'
+
 
 export function App() {
-  return <>
-    <Container>
-      <Logo></Logo>
-    </Container>
 
-    <Container>
-      <Menu></Menu>
-    </Container>
+  return (
+    <>
+      <Container>
+        <Logo></Logo>
+      </Container>
 
-    <Container>
-      <CountDown></CountDown>
-    </Container>
+      <Container>
+        <Menu></Menu>
+      </Container>
 
-    <Container>
-      <form className='form' action="">
-        <div className='formRow'>
-          <label htmlFor="input">task</label>
-          <input id='input' type="text" />
-        </div>
+      <Container>
+        <CountDown></CountDown>
+      </Container>
 
-        <div className='formRow'>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
+      <Container>
+        <form className='form' action="">
+          <div className='formRow'>
+            <DefaultInput labelText={"task"} id='MeuInput' type='text' placeholder='Digite Algo' />
+          </div>
 
-        <div className='formRow'>
-          <p>Ciclos</p>
-          <p>0 0 0 0 0 0</p>
-        </div>
+          <div className='formRow'>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
 
-        <div className='formRow'>
-          <button>Enviar</button>
-        </div>
-      </form>
-    </Container>
+          <div className='formRow'>
+            <Cycles />
+          </div>
 
-  </>
+          <div className='formRow'>
+            <DefaultButton icon={<PlayCircleIcon />} />
+          </div>
+        </form>
+      </Container>
+
+      <Container>
+        <Footer></Footer>
+      </Container>
+    </>)
 }
 
